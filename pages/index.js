@@ -19,7 +19,7 @@ export default function Home() {
 
   const [winReady, setwinReady] = useState(false);
   useEffect(() => {
-      window.history.forward(1);
+      
       setwinReady(true);
         
     }, []);
