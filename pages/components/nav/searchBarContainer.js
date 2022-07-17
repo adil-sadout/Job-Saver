@@ -3,7 +3,7 @@ import SearchBarLocation from "./searchBarLocation"
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import Grid from '@mui/material/Grid';
-function SearchBarContainer() {
+export default function SearchBarContainer() {
   return (
     <Grid container spacing={0.5} sx={{margin:"0 auto"}}>
         <Grid item xs={5}>
@@ -22,5 +22,3 @@ function SearchBarContainer() {
     </Grid>
   )
 }
-
-export default SearchBarContainer
