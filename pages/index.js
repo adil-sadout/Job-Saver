@@ -41,7 +41,7 @@ export default function Home() {
       },
       {
         id:"savedjob3",
-        role:"saved: Full FE2",
+        role:"saved: Full FE3",
         skills:"reactjs",
         salary:"150k",
         isDragDisabled:true
