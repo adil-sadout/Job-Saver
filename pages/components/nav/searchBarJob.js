@@ -3,7 +3,7 @@ import InputBase from '@mui/material/InputBase';
 
 
 
-export default function SearchBar() {
+export default function SearchBarJob() {
     return (
       <Paper
         component="form"
