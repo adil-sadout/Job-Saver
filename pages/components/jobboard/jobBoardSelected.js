@@ -1,10 +1,65 @@
 import Container from "@mui/system/Container"
+import Typography from '@mui/material/Typography';
+import { Droppable, Draggable } from "react-beautiful-dnd";
 
-export default function JobBoardContainer() {
+
+export default function JobBoardSelected({savedJobs}) {
   return (
     
     <Container maxWidth="false" sx={{height:"100%", padding:"20px", backgroundColor:"#d8e6ad", borderRadius:"25px"}}>
-      <div>jobBoardContainer</div>
+      <div>
+      <Typography variant="subtitle2">
+        Saved Jobs
+      </Typography>
+      <Droppable droppableId="jobFoundSearch">
+        {
+          (provided)=>(
+
+            <ul  className="jobFoundSearch" {...provided.droppableProps}  ref={provided.innerRef} >
+              
+              {
+                savedJobs.map((job, index) =>{
+                  return(
+                    <>
+                      <Draggable isDragDisabled={job.isDragDisabled} key={job.id} draggableId={job.id} index={index}>
+                        {
+                          (provided)=>(
+                            <>
+
+                              
+                                <li
+                                className="jobfound"
+                                
+                                {...provided.draggableProps}
+                                {...provided.dragHandleProps}
+                                ref={provided.innerRef}>
+
+                                  <h4>{job.role}</h4>
+                                  <p>salary:{job.salary} </p>
+                                  <p>skills:{job.skills} </p>
+                                </li>
+
+                                {provided.placeholder}
+                            </>
+                            
+                          )
+                        }
+                      </Draggable>
+                    </>
+                  )
+                }
+                )
+              }
+              
+              
+              {provided.placeholder}
+            </ul>
+            
+          )
+          
+        }
+      </Droppable>
+      </div>
     </Container>
   )
 }
