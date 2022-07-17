@@ -1,5 +1,5 @@
-import SearchBarJob from "./SearchBarJob"
-import SearchBarLocation from "./SearchBarLocation"
+import SearchBarJob from "./searchBarJob"
+import SearchBarLocation from "./searchBarLocation"
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import Grid from '@mui/material/Grid';

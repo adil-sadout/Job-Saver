@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import {useEffect, useState} from "react"
 
-import JobBoardSearch from './components/jobboard/JobBoardSearch';
+import JobBoardSearch from './components/jobboard/jobBoardSearch';
 
-import JobBoardSelected from './components/jobboard/JobBoardSelected';
+import JobBoardSelected from './components/jobboard/jobBoardSelected';
 
 import SearchBarContainer from './components/nav/searchBarContainer';
 
