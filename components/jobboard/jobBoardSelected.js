@@ -15,7 +15,34 @@ export default function JobBoardSelected({savedJobs}) {
         {
           (provided)=>(
 
+
             <ul  className="jobFoundSearch" {...provided.droppableProps}  ref={provided.innerRef} >
+
+              {
+                (savedJobs.length ===0)?
+                <Draggable isDragDisabled={true} key="placeholderKey" draggableId="placeholderId" index={99999}>
+                        {
+                          (provided)=>(
+                            <>
+                            
+                                <li
+                                  className="fillerjob"
+                                  {...provided.draggableProps}
+                                  {...provided.dragHandleProps}
+                                  ref={provided.innerRef}>
+                                    <p>drop the positions you want to save here</p>
+                                </li>
+                                
+
+                                
+                            </>
+                          )
+                        }
+                      </Draggable>:
+                      null
+              }
+
+                      
               
               {
                 savedJobs.map((job, index) =>{

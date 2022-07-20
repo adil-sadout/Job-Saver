@@ -13,7 +13,7 @@ export default function JobBoardSearch({jobsApiResult}) {
       <Droppable droppableId="jobFoundBoard">
         {
           (provided)=>(
-            <ul  className="jobFoundBoard" {...provided.droppableProps}  ref={provided.innerRef} >
+            <ul  className="jobFoundBoard"  {...provided.droppableProps}  ref={provided.innerRef} >
               {
                 jobsApiResult.map((job, index) =>{
                   return(
