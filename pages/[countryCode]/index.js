@@ -5,8 +5,7 @@ import SearchBarContainer from '../../components/nav/searchBarContainer';
 
 export default function CountryCode() {
     
-  const router = useRouter()
-  const country = router.query.countryCode
+ 
 
 
 
@@ -23,7 +22,7 @@ export default function CountryCode() {
 
             <Grid item xs={10}>
               <Typography variant='subtitle1' align="center" color={"white"} sx={{padding:"10px 0"}}>
-                Please make sure to have both fields up
+                An error has occured, Please try again later...
               </Typography>
               <SearchBarContainer />
             </Grid>   

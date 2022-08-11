@@ -19,7 +19,7 @@ a {
 }
 
 ul{
-  margin: 0;
+  margin: 10px 0 20px 0;
   padding: 0;
   list-style: none;
 }
@@ -27,7 +27,7 @@ ul{
 .jobfound{
   background-color: rgb(187, 132, 132);
   width: 100%;
-  margin: 5px 0;
+  margin-bottom: 5px;
   padding: 5px;
   border-radius: 5px;
   text-align: center;
@@ -49,4 +49,27 @@ ul{
   justify-content: center;
   align-items: center;
 
+}
+
+
+
+.styled-overflow{
+  overflow-y:scroll;
+  
+  
+  
+}
+
+.styled-overflow::-webkit-scrollbar {
+  width: 3px;
+}
+
+.styled-overflow::-webkit-scrollbar-track {
+  background-color: #e4e4e4;
+  border-radius: 100px;
+}
+
+.styled-overflow::-webkit-scrollbar-thumb {
+  background-color: #d4aa70;
+  border-radius: 100px;
 }

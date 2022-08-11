@@ -7,11 +7,11 @@ export default function SearchBarJob({jobRole, setJobRole}) {
     return (
       <Paper
         component="form"
-        sx={{ padding: '10px', display: 'flex', alignItems: 'center' , borderRadius:"25px", backgroundColor:"#181A1B"}}
+        sx={{ height:"100%",display: 'flex', alignItems: 'center'}}
       >
         
         <InputBase
-          sx={{ ml: 1, flex: 1 , color:"#AAAAAA", fontWeight:"bold"}}
+          sx={{ ml: 1, flex: 1 , color:"black", fontWeight:"bold"}}
           placeholder="Search Job"
           required
           onChange={(e)=>setJobRole(e.target.value)}

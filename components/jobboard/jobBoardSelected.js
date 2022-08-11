@@ -6,7 +6,7 @@ import { Droppable, Draggable } from "react-beautiful-dnd";
 export default function JobBoardSelected({savedJobs}) {
   return (
     
-    <Container maxWidth="false" sx={{height:"100%", padding:"20px", backgroundColor:"#d8e6ad", borderRadius:"25px"}}>
+    <Container maxWidth="false" sx={{height:"100%", padding:"20px", backgroundColor:"#5CB4BE", borderRadius:"25px"}}>
       <div>
       <Typography variant="subtitle2">
         Saved Jobs
@@ -51,23 +51,16 @@ export default function JobBoardSelected({savedJobs}) {
                       <Draggable isDragDisabled={job.isDragDisabled} key={job.id} draggableId={job.id} index={index}>
                         {
                           (provided)=>(
-                            <>
+                            <li className="jobfound"
+                            {...provided.draggableProps}
+                            {...provided.dragHandleProps}
+                            ref={provided.innerRef}
 
-                              
-                                <li
-                                className="jobfound"
-                                
-                                {...provided.draggableProps}
-                                {...provided.dragHandleProps}
-                                ref={provided.innerRef}>
-
-                                  <h4>{job.role}</h4>
-                                  <p>salary:{job.salary} </p>
-                                  <p>skills:{job.skills} </p>
-                                </li>
-
-                                {provided.placeholder}
-                            </>
+                            >
+                              <h4>{job.title}</h4>
+                              <p>description:{job.description} </p>
+                              <p>company:{job.company.display_name} </p>
+                            </li>
                             
                           )
                         }
