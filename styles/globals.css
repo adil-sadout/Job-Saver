@@ -4,8 +4,15 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: #102c35;
+  background-color: #845EC2;
 }
+
+.background2{
+  background-color: #FFC75F;
+  background-color: #B39CD0;
+}
+
+
 
 a {
   color: inherit;
@@ -25,31 +32,70 @@ ul{
 }
 
 .jobfound{
-  background-color: rgb(187, 132, 132);
+  background-color: #FF9671;
+  background-color: #efdff3;
   width: 100%;
   margin-bottom: 5px;
-  padding: 5px;
+  padding: 15px 25px;
   border-radius: 5px;
+  
+  
+}
+
+.jobfound h4{
+  
   text-align: center;
+  
+  
+}
+
+.jobfound h5{
+  margin: 0;
+}
+
+.jobfound p{
+  
+  text-align: left;
+  margin: 0;
+  
+}
+
+.fillerjob h4{
+  
+  text-align: center;
+  
+  
+}
+
+.fillerjob h5{
+  margin: 0;
+}
+
+.fillerjob p{
+  
+  
   
 }
 
 
+
 .fillerjob{
-  
-  
   height: 30vh;
 }
 
 .fillerjob p{
-  height: 100%;
-  display: flex;
-  padding: 0;
+  text-align: left;
   margin: 0;
-  justify-content: center;
-  align-items: center;
 
 }
+
+.jobfound-info-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
 
 
 

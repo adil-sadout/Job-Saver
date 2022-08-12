@@ -8,18 +8,32 @@ import {useEffect, useState} from "react"
 import Container from '@mui/system/Container';
 
 export default function JobTitle({fetchedData}) {
-
-    useEffect(()=>{
-        setJobsApiResult(fetchedData.results)
-    },[])
-
     const router = useRouter()
     const pageNumber = router.query.pageNumber
+    
+    const [savedJobs, setSavedJobs] = useState([]);
+    const [jobsApiResult, setJobsApiResult] = useState([])
+    const [winReady, setwinReady] = useState(false);
+    
+    useEffect(() => {
+        setwinReady(true);
+    }, []);
+    useEffect(()=>{
+        setJobsApiResult(fetchedData.results) 
+        console.log(jobsApiResult)
+    },[pageNumber])
 
-    console.log(pageNumber)
     
 
+    console.log(pageNumber)
     console.log(fetchedData)
+
+
+    function cleanSavedJobs(a) {
+      
+   }
+
+    
     const handleDragEnd = (result)=>{
     
         const searchedJobs = Array.from(jobsApiResult)
@@ -50,6 +64,11 @@ export default function JobTitle({fetchedData}) {
             return job
           }
         })
+        /***remove duplicate from newsavedjobs array
+        let uniqueArray = newSavedJobs.filter(function(item, pos) {
+          return newSavedJobs.indexOf(item) == pos;
+      })***/
+        
         setJobsApiResult(newJobApiList)
         setSavedJobs(newSavedJobs)
         
@@ -59,12 +78,7 @@ export default function JobTitle({fetchedData}) {
       
 
     
-    const [winReady, setwinReady] = useState(false);
-    useEffect(() => {
-        setwinReady(true);
-    }, []);
-    const [savedJobs, setSavedJobs] = useState([]);
-    const [jobsApiResult, setJobsApiResult] = useState([])
+    
 
 
     return (
@@ -80,7 +94,7 @@ export default function JobTitle({fetchedData}) {
                         <JobBoardSearch jobsApiResult={jobsApiResult} pageNumber={pageNumber}/>
                     </Grid>
                     <Grid item xs={12} sm={6} sx={{padding:"5px"}}>
-                        <JobBoardSelected savedJobs={savedJobs} />
+                        <JobBoardSelected savedJobs={savedJobs} cleanSavedJobs={cleanSavedJobs}/>
                     </Grid>
                 </DragDropContext>:
                 <p>Error loading the dashboard, please try again later</p>

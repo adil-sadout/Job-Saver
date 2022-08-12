@@ -1,26 +1,31 @@
 import Container from "@mui/system/Container"
 import Typography from '@mui/material/Typography';
 import { Droppable, Draggable } from "react-beautiful-dnd";
-
-
-export default function JobBoardSelected({savedJobs}) {
+import JobBoardJob from "./jobBoardJob"
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+export default function JobBoardSelected({savedJobs, cleanSavedJobs}) {
   return (
     
-    <Container maxWidth="false" sx={{height:"100%", padding:"20px", backgroundColor:"#5CB4BE", borderRadius:"25px"}}>
+    <Container maxWidth="false"  className="background2" sx={{height:"100%", padding:"20px", borderRadius:"25px"}}>
       <div>
-      <Typography variant="subtitle2">
-        Saved Jobs
-      </Typography>
+      <Box>
+        <Typography variant="subtitle2">
+          Saved Jobs: {savedJobs.length}
+        </Typography>
+        
+      </Box>
+
       <Droppable droppableId="jobFoundSearch">
         {
           (provided)=>(
 
 
-            <ul  className="jobFoundSearch" {...provided.droppableProps}  ref={provided.innerRef} >
+            <ul  className="jobFoundSearch styled-overflow" style={{height:"75vh"}} {...provided.droppableProps}  ref={provided.innerRef} >
 
               {
                 (savedJobs.length ===0)?
-                <Draggable isDragDisabled={true} key="placeholderKey" draggableId="placeholderId" index={99999}>
+                <Draggable isDragDisabled={true} key="placeholderKey1" draggableId="placeholderId1" index={999999}>
                         {
                           (provided)=>(
                             <>
@@ -48,7 +53,7 @@ export default function JobBoardSelected({savedJobs}) {
                 savedJobs.map((job, index) =>{
                   return(
                     <>
-                      <Draggable isDragDisabled={job.isDragDisabled} key={job.id} draggableId={job.id} index={index}>
+                      <Draggable isDragDisabled={job.isDragDisabled} key={job.id} draggableId={job.id.toString()} index={index}>
                         {
                           (provided)=>(
                             <li className="jobfound"
@@ -57,9 +62,7 @@ export default function JobBoardSelected({savedJobs}) {
                             ref={provided.innerRef}
 
                             >
-                              <h4>{job.title}</h4>
-                              <p>description:{job.description} </p>
-                              <p>company:{job.company.display_name} </p>
+                              <JobBoardJob job={job} />
                             </li>
                             
                           )
