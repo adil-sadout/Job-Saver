@@ -13,7 +13,7 @@ export default function JobBoardSearch({jobsApiResult, pageNumber}) {
   const [page, setPage] = useState(1);
 
   const handlePagiChange = (e, value)=>{
-    console.log(e)
+    
     setPage(value);
     router.push(`/${country}/${jobRole}/${value}`)
   }

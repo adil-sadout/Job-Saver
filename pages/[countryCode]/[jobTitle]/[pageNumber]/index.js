@@ -20,13 +20,13 @@ export default function JobTitle({fetchedData}) {
     }, []);
     useEffect(()=>{
         setJobsApiResult(fetchedData.results) 
-        console.log(jobsApiResult)
+        //console.log(jobsApiResult)
     },[pageNumber])
 
     
 
-    console.log(pageNumber)
-    console.log(fetchedData)
+    //console.log(pageNumber)
+    //console.log(fetchedData)
 
 
     function cleanSavedJobs(a) {
