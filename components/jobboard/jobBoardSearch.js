@@ -52,7 +52,7 @@ export default function JobBoardSearch({jobsApiResult, pageNumber}) {
                       null
               }
               {
-                jobsApiResult.map((job, index) =>{
+                jobsApiResult?.map((job, index) =>{
                   return(
                     <>
                       <Draggable isDragDisabled={job.isDragDisabled} key={job.id} draggableId={job.id.toString()} index={index}>

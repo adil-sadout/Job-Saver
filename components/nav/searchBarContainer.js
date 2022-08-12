@@ -25,19 +25,22 @@ export default function SearchBarContainer({}) {
     }
     
   }
+  
+
+  
 
   return (
     <>
         <Grid container spacing={0.5} >
             
                 <Grid item xs={4} sm={6} md={8}>
-                    <SearchBarJob setJobRole={setJobRole} jobRole={jobRole} />
+                    <SearchBarJob setJobRole={setJobRole} jobRole={jobRole} handleClick={handleClick} />
                 </Grid>
                 <Grid item >
                     <SearchBarLocation setCountry={setCountry} country={country} />
                 </Grid>
                 <Grid item xs={2} sx={{textAlign: "center"}}>
-                    <IconButton sx={{ padding: '15px' , backgroundColor:"white"}} onClick={(e)=>handleClick(e)}>
+                    <IconButton sx={{ padding: '15px' , backgroundColor:"white"}} onClick={(e)=>handleClick(e)} >
                         <SearchIcon />
                     </IconButton>
                 </Grid>

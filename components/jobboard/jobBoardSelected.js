@@ -50,7 +50,7 @@ export default function JobBoardSelected({savedJobs, cleanSavedJobs}) {
                       
               
               {
-                savedJobs.map((job, index) =>{
+                savedJobs?.map((job, index) =>{
                   return(
                     <>
                       <Draggable isDragDisabled={job.isDragDisabled} key={job.id} draggableId={job.id.toString()} index={index}>

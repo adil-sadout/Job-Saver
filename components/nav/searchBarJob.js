@@ -3,7 +3,14 @@ import InputBase from '@mui/material/InputBase';
 
 
 
-export default function SearchBarJob({jobRole, setJobRole}) {
+export default function SearchBarJob({jobRole, setJobRole, handleClick}) {
+
+  const handleEnterClick = (e, func) => {
+    if (e.key==="Enter"){
+        func(e)
+    }
+  }
+  
     return (
       <Paper
         component="form"
@@ -16,6 +23,7 @@ export default function SearchBarJob({jobRole, setJobRole}) {
           required
           onChange={(e)=>setJobRole(e.target.value)}
           value={jobRole}
+          onKeyPress={e => handleEnterClick(e, handleClick)}
         />
         
         
