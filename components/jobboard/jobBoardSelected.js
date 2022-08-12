@@ -24,7 +24,7 @@ export default function JobBoardSelected({savedJobs, cleanSavedJobs}) {
             <ul  className="jobFoundSearch styled-overflow" style={{height:"75vh"}} {...provided.droppableProps}  ref={provided.innerRef} >
 
               {
-                (savedJobs.length ===0)?
+                (savedJobs?.length ===0)?
                 <Draggable isDragDisabled={true} key="placeholderKey1" draggableId="placeholderId1" index={999999}>
                         {
                           (provided)=>(

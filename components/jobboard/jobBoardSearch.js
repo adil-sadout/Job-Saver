@@ -29,7 +29,7 @@ export default function JobBoardSearch({jobsApiResult, pageNumber}) {
           (provided)=>(
             <ul className="jobFoundBoard styled-overflow" style={{height:"65vh"}} {...provided.droppableProps}  ref={provided.innerRef} >
               {
-                (jobsApiResult.length ===0)?
+                (jobsApiResult?.length ===0)?
                 <Draggable isDragDisabled={true} key="placeholderKey2" draggableId="placeholderId2" index={99999}>
                         {
                           (provided)=>(
