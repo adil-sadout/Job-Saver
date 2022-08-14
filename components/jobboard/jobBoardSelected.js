@@ -2,9 +2,11 @@ import Container from "@mui/system/Container"
 import Typography from '@mui/material/Typography';
 import { Droppable, Draggable } from "react-beautiful-dnd";
 import JobBoardJob from "./jobBoardJob"
-import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 import Box from '@mui/material/Box';
-export default function JobBoardSelected({savedJobs, cleanSavedJobs}) {
+import Grid from '@mui/material/Grid';
+export default function JobBoardSelected({savedJobs, deleteSavedJob}) {
   return (
     
     <Container maxWidth="false"  className="background2" sx={{height:"100%", padding:"20px", borderRadius:"25px"}}>
@@ -62,6 +64,12 @@ export default function JobBoardSelected({savedJobs, cleanSavedJobs}) {
                             ref={provided.innerRef}
 
                             >
+                              <Grid item xs={12} sx={{textAlign: "end"}}>
+                                  <IconButton sx={{ padding: '1px' }} onClick={(e)=>deleteSavedJob(e, job)} >
+                                      <CloseIcon fontSize="small" />
+                                  </IconButton>
+                              </Grid>
+
                               <JobBoardJob job={job} />
                             </li>
                             

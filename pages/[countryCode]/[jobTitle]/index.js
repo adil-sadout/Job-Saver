@@ -1,7 +1,5 @@
 import Grid from '@mui/material/Grid';
 import SearchBarContainer from '../../../components/nav/searchBarContainer';
-import Container from '@mui/system/Container';
-import {useRouter} from "next/router"
 import Typography from '@mui/material/Typography';
 
 

@@ -13,7 +13,7 @@ export default function JobBoardSearch({jobsApiResult, pageNumber}) {
   const [page, setPage] = useState(1);
 
   const handlePagiChange = (e, value)=>{
-    
+    e.preventDefault()
     setPage(value);
     router.push(`/${country}/${jobRole}/${value}`)
   }
@@ -86,7 +86,7 @@ export default function JobBoardSearch({jobsApiResult, pageNumber}) {
       
       </div>
       
-      <Pagination defaultPage={pageNumber} showFirstButton page={page} showLastButton size="large" count={10} variant="outlined" onChange={handlePagiChange}/>
+      <Pagination defaultPage={parseInt(pageNumber)} showFirstButton page={page} showLastButton size="large" count={10} variant="outlined" onChange={handlePagiChange}/>
       
     </Container>
   )

@@ -8,6 +8,7 @@ import {useEffect, useState} from "react"
 import Container from '@mui/system/Container';
 
 export default function JobTitle({fetchedData}) {
+
     const router = useRouter()
     const pageNumber = router.query.pageNumber
     
@@ -18,6 +19,7 @@ export default function JobTitle({fetchedData}) {
     useEffect(() => {
         setwinReady(true);
     }, []);
+
     useEffect(()=>{
         setJobsApiResult(fetchedData.results) 
         //console.log(jobsApiResult)
@@ -29,13 +31,26 @@ export default function JobTitle({fetchedData}) {
     //console.log(fetchedData)
 
 
-    function cleanSavedJobs(a) {
-      
-   }
+    const deleteSavedJob = (e, job)=>{
+      e.preventDefault()
+      //console.log(job)
+      const newSavedJobArray = savedJobs.filter(savedJob =>{
+        
+        if (savedJob.id === job.id){
+          return 
+        }
+        return savedJob
+      })
+      //console.log(newSavedJobArray)
+      setSavedJobs(newSavedJobArray);
+    }
+
+
+  
 
     
     const handleDragEnd = (result)=>{
-    
+        
         const searchedJobs = Array.from(jobsApiResult)
         const newSavedJobs = Array.from(savedJobs)
         const {destination, source} = result;
@@ -55,6 +70,7 @@ export default function JobTitle({fetchedData}) {
         ){
           return;
         }
+
     
         const [draggedJob] = searchedJobs.splice(result.source.index, 1)
         draggedJob.isDragDisabled=true;
@@ -77,7 +93,7 @@ export default function JobTitle({fetchedData}) {
 
       
 
-    
+      
     
 
 
@@ -94,7 +110,7 @@ export default function JobTitle({fetchedData}) {
                         <JobBoardSearch jobsApiResult={jobsApiResult} pageNumber={pageNumber}/>
                     </Grid>
                     <Grid item xs={12} sm={6} sx={{padding:"5px"}}>
-                        <JobBoardSelected savedJobs={savedJobs} cleanSavedJobs={cleanSavedJobs}/>
+                        <JobBoardSelected savedJobs={savedJobs} deleteSavedJob={deleteSavedJob}/>
                     </Grid>
                 </DragDropContext>:
                 <p>Error loading the dashboard, please try again later</p>

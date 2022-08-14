@@ -6,6 +6,7 @@ import InputBase from '@mui/material/InputBase';
 export default function SearchBarJob({jobRole, setJobRole, handleClick}) {
 
   const handleEnterClick = (e, func) => {
+    e.preventDefault()
     if (e.key==="Enter"){
         func(e)
     }
